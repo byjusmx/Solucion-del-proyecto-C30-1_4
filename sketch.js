@@ -8,7 +8,7 @@ var canvas;
 var palyer, playerBase;
 var computer, computerBase;
 
-//Declare an array for arrows playerArrows = [ ]
+//Declara una matriz para las flechas playerArrows=[]
 var playerArrows = [];
 
 var arrow;
@@ -58,11 +58,11 @@ function draw() {
 
   Engine.update(engine);
 
-  // Title
+  // Título
   fill("#FFFF");
   textAlign("center");
   textSize(40);
-  text("EPIC ARCHERY", width / 2, 100);
+  text("TIRO CON ARCO ÉPICO", width / 2, 100);
 
  
   playerBase.display();
@@ -75,7 +75,7 @@ function draw() {
   playerArcher.display();
   computerArcher.display()
 
- // Use for loop to display arrow using showArrow() function
+ // Utiliza el bucle for para mostrar la flecha usando la función showArrow()
  for (var i = 0; i < playerArrows.length; i++) {
   showArrows(i, playerArrows);
 }
@@ -85,7 +85,7 @@ function draw() {
 function keyPressed() {
 
   if(keyCode === 32){
-    // create an arrow object and add into an array ; set its angle same as angle of playerArcher
+    // crea un objeto flecha y agrégalo a una matriz; establece su ángulo igual que el ángulo de playerArcher
     var posX = playerArcher.body.position.x;
     var posY = playerArcher.body.position.y;
     var angle = playerArcher.body.angle+PI/2;
@@ -102,7 +102,7 @@ function keyPressed() {
 function keyReleased () {
 
   if(keyCode === 32){
-    //call shoot() function for each arrow in an array playerArrows
+    //llama a la función shoot() para cada flecha en una matriz playerArrows
     if (playerArrows.length) {
       var angle = playerArcher.body.angle+PI/2;
       playerArrows[playerArrows.length - 1].shoot(angle);
@@ -110,7 +110,7 @@ function keyReleased () {
   }
 
 }
-//Display arrow and Tranjectory
+//Muestra las flechas y la trayectoria
 function showArrows(index, arrows) {
   arrows[index].display();
   
